@@ -5,18 +5,9 @@ import { ethers } from "ethers";
 import { Router, Vault } from "../constants/constants";
 import { PawnMasterAbi } from "../constants/pawnMaster";
 import { DummyTokenAbi} from "../constants/dummyToken";
-import {Dummycollateral,PawnMaster} from "../constants/constants";
-import {
-  getSqrtX96FromPrice,
-  getSqrtX96FromPrice1,
-  nearestValidTick,
-  findLowerValidTick,
-  findUpperValidTick,
-  getpriceFromSqrtX96,
-  getpriceFromSqrtX961,
-  getBigNumber,
-  oldTickFinder,
-} from "../utils/tick";
+import { StableTokenAbi} from "../constants/stableToken";
+import {Dummycollateral,PawnMaster,StableCoin} from "../constants/constants";
+
 
 export const injected = new InjectedConnector();
 
@@ -75,7 +66,7 @@ export default function BorrowToken() {
     if (active) {
       const signer = provider.getSigner();
       const pawnMasterInst = new ethers.Contract(PawnMaster, PawnMasterAbi, signer);
-      const tokenAInst = new ethers.Contract(Dummycollateral, DummyTokenAbi, signer);
+      const tokenAInst = new ethers.Contract(StableCoin,StableTokenAbi , signer);
       const vaultdata=await pawnMasterInst.vault("1")
       let inamount=vaultdata.collateralAmount
       console.log(vaultdata)

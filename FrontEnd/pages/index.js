@@ -7,15 +7,7 @@ import { PawnMasterAbi } from "../constants/pawnMaster";
 import { DummyTokenAbi} from "../constants/dummyToken";
 import {Dummycollateral,PawnMaster} from "../constants/constants";
 import {
-  getSqrtX96FromPrice,
-  getSqrtX96FromPrice1,
-  nearestValidTick,
-  findLowerValidTick,
-  findUpperValidTick,
-  getpriceFromSqrtX96,
-  getpriceFromSqrtX961,
   getBigNumber,
-  oldTickFinder,
 } from "../utils/tick";
 
 export const injected = new InjectedConnector();
