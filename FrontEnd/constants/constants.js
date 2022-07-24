@@ -1,0 +1,3 @@
+export const PawnMaster='0x007cD08Daf9eBa5A8bb95fA8B42751D2a6224b6E'
+export const Dummycollateral='0x997bAaDAa2963f0218A8Dd0E97f26D8a62aBbf1b'
+export const StableCoin="0x5172A1CDdf051A244d93AFE75084f22beE6D248c"
